@@ -209,7 +209,7 @@ ISR(TIMER1_COMPA_vect)
       st.counter_x -= st.event_count;
       if (out_bits & (1<<X_DIRECTION_BIT)) { sys.position[X_AXIS]--; }
       else { sys.position[X_AXIS]++; }
-        mcpDac1BSend(sys.position[X_AXIS]);
+        mcpDac1ASend(sys.position[X_AXIS]);
     }
 
       
@@ -220,7 +220,7 @@ ISR(TIMER1_COMPA_vect)
       st.counter_y -= st.event_count;
       if (out_bits & (1<<Y_DIRECTION_BIT)) { sys.position[Y_AXIS]--; }
       else { sys.position[Y_AXIS]++; }
-          mcpDac1ASend(sys.position[Y_AXIS]);
+          mcpDac1BSend(sys.position[Y_AXIS]);
     }
 
     
